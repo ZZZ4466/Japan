@@ -41,6 +41,18 @@ nav a:hover { background: rgba(255,255,255,0.3); }
 .transport-item:last-child { border-bottom: none; }
 .hotel-box { background: #f3e5f5; border-radius: 8px; padding: 10px 14px; margin: 10px 0; font-size: 0.85rem; color: #4a148c; }
 .toggle-icon { font-size: 1.2rem; color: #999; }
+.route-bar { padding: 12px 20px 4px; }
+.route-btn { display: inline-flex; align-items: center; gap: 6px; background: #4285f4; color: white !important; text-decoration: none; padding: 8px 18px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; }
+.route-btn:hover { background: #3367d6; }
+.distances { background: #f9f9f9; border-radius: 8px; padding: 10px 14px; margin: 10px 20px; font-size: 0.82rem; }
+.distances h4 { color: #555; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+.dist-row { display: flex; justify-content: space-between; padding: 3px 0; border-bottom: 1px dashed #e0e0e0; color: #444; }
+.dist-row:last-child { border-bottom: none; }
+.dist-time { color: #1565c0; font-weight: 600; }
+.restaurant-box { background: #fce4ec; border-radius: 8px; padding: 12px 16px; margin: 8px 0; }
+.restaurant-box h4 { color: #c62828; font-size: 0.88rem; margin-bottom: 8px; }
+.rest-item { font-size: 0.83rem; color: #333; padding: 3px 0; }
+.rest-item a { color: #c62828; }
 </style>
 </head>
 <body>
@@ -78,7 +90,15 @@ nav a:hover { background: rgba(255,255,255,0.3); }
     <span class="toggle-icon" id="i1">▼</span>
   </div>
   <div class="day-body" id="b1">
-
+  <div class="route-bar">
+    <a class="route-btn" href="https://www.google.com/maps/dir/Narita+International+Airport/Tokyu+Hotel+Excel+Shibuya/Shibuya+Scramble+Crossing/Hachiko+Statue+Shibuya/Shibuya+Yokocho+Tokyo" target="_blank">🗺️ מסלול יומי ב-Google Maps</a>
+  </div>
+  <div class="distances">
+    <h4>⏱️ מרחקים ביום זה</h4>
+    <div class="dist-row"><span>✈️ נאריטה → שיבויה</span><span class="dist-time">~90 דק' (אוטובוס/רכבת)</span></div>
+    <div class="dist-row"><span>🚶 מלון → מעבר החציה</span><span class="dist-time">2 דק' הליכה (ממש מול המלון!)</span></div>
+    <div class="dist-row"><span>🚶 מעבר החציה → Yokocho</span><span class="dist-time">5 דק' הליכה | 400מ'</span></div>
+  </div>
     <div class="section-title">🏨 לינה</div>
     <div class="hotel-box">Tokyu Hotel Excel Shibuya – צ'ק-אין בערך 16:30</div>
 
@@ -114,6 +134,13 @@ nav a:hover { background: rgba(255,255,255,0.3); }
       <a href="https://maps.app.goo.gl/wNBrC4FJLgM4MDSe8" target="_blank">📍 מפה</a>
     </div>
 
+    <div class="section-title">🍝 מסעדות מערביות בשיבויה</div>
+    <div class="restaurant-box">
+      <h4>המלצות לארוחת ערב ראשונה ביפן</h4>
+      <div class="rest-item">🥞 <strong>Bills Shibuya</strong> – קפה אוסטרלי אייקוני, מפורסם בפנקייק ובארוחות בוקר. <a href="https://www.google.com/maps/search/Bills+Shibuya+Tokyo" target="_blank">📍 מפה</a></div>
+      <div class="rest-item">🥩 <strong>Wolfgang's Steakhouse Roppongi</strong> – סטייקהאוס ניו-יורקי, 20 דק' מהמלון. <a href="https://www.google.com/maps/search/Wolfgang+Steakhouse+Tokyo" target="_blank">📍 מפה</a></div>
+      <div class="rest-item">🔍 <a href="https://www.google.com/maps/search/western+restaurant+Shibuya+Tokyo" target="_blank">חיפוש מסעדות מערביות נוספות בשיבויה</a></div>
+    </div>
     <div class="tip-box">💡 Tokyo היא המטרופולין הגדול בעולם – 14 מיליון תושבים בעיר, 37 מיליון בטוקיו רבתי.</div>
   </div>
 </div>
@@ -130,7 +157,16 @@ nav a:hover { background: rgba(255,255,255,0.3); }
     <span class="toggle-icon" id="i2">▼</span>
   </div>
   <div class="day-body" id="b2">
-
+  <div class="route-bar">
+    <a class="route-btn" href="https://www.google.com/maps/dir/Tokyo+Skytree/Senso-ji+Temple+Asakusa/Ueno+Park+Tokyo/Ameyoko+Market+Ueno/Akihabara+Electric+Town" target="_blank">🗺️ מסלול יומי ב-Google Maps</a>
+  </div>
+  <div class="distances">
+    <h4>⏱️ מרחקים ביום זה</h4>
+    <div class="dist-row"><span>🚶 Skytree → Senso-ji</span><span class="dist-time">15 דק' | 1.2 ק"מ</span></div>
+    <div class="dist-row"><span>🚶 Senso-ji → פארק Ueno</span><span class="dist-time">25 דק' | 2 ק"מ (או 5 דק' מטרו)</span></div>
+    <div class="dist-row"><span>🚶 Ueno → שוק Ameyoko</span><span class="dist-time">2 דק' | ממש ליד!</span></div>
+    <div class="dist-row"><span>🚶/🚆 Ameyoko → Akihabara</span><span class="dist-time">20 דק' הליכה | או 5 דק' JR</span></div>
+  </div>
     <div class="hotel-box">🏨 Tokyu Hotel Excel Shibuya</div>
 
     <div class="section-title">🗺️ תוכנית היום</div>
@@ -169,6 +205,12 @@ nav a:hover { background: rgba(255,255,255,0.3); }
       🍱 <strong>Marugo Tonkatsu</strong> – מסעדת שניצל חזיר המוזכרת בספרי מישלן, נמצאת באקיהבארה.
     </div>
 
+    <div class="section-title">🍝 מסעדות מערביות באקיהבארה</div>
+    <div class="restaurant-box">
+      <h4>האיזור בעיקר יפני – אבל יש אפשרויות</h4>
+      <div class="rest-item">🍱 <strong>Marugo Tonkatsu</strong> – כבר ברשימה! מישלן, שניצל חזיר</div>
+      <div class="rest-item">🔍 <a href="https://www.google.com/maps/search/italian+restaurant+Akihabara+Tokyo" target="_blank">חיפוש מסעדות איטלקיות ליד אקיהבארה</a></div>
+    </div>
     <div class="tip-box">💡 ציינתם שאינכם מעוניינים במקדשים – Senso-ji הוא מקדש אחד שכדאי לכלול כי הוא ייחודי במיוחד. תוכלו להחליט אם ללכת או לדלג.</div>
   </div>
 </div>
@@ -185,6 +227,16 @@ nav a:hover { background: rgba(255,255,255,0.3); }
     <span class="toggle-icon" id="i3">▼</span>
   </div>
   <div class="day-body" id="b3">
+  <div class="route-bar">
+    <a class="route-btn" href="https://www.google.com/maps/dir/Tokyo+Imperial+Palace/Omotesando+Hills+Tokyo/Yoyogi+Park+Tokyo/Takeshita+Street+Harajuku/Tokyo+Metropolitan+Government+Building/Omoide+Yokocho+Shinjuku" target="_blank">🗺️ מסלול יומי ב-Google Maps</a>
+  </div>
+  <div class="distances">
+    <h4>⏱️ מרחקים ביום זה</h4>
+    <div class="dist-row"><span>🚆 ארמון הקיסר → Omotesando</span><span class="dist-time">15 דק' מטרו (4 ק"מ)</span></div>
+    <div class="dist-row"><span>🚶 Omotesando → פארק Yoyogi</span><span class="dist-time">10 דק' | 800מ'</span></div>
+    <div class="dist-row"><span>🚶 Yoyogi → Takeshita Street</span><span class="dist-time">6 דק' | 500מ'</span></div>
+    <div class="dist-row"><span>🚶/🚆 Harajuku → Shinjuku</span><span class="dist-time">20 דק' הליכה | או 5 דק' מטרו</span></div>
+  </div>
     <div class="hotel-box">🏨 Tokyu Hotel Excel Shibuya</div>
     <div class="section-title">🗺️ תוכנית היום</div>
     <div class="activity">
@@ -225,6 +277,13 @@ nav a:hover { background: rgba(255,255,255,0.3); }
       <p>האיזור הגדול ביותר של חיי לילה בטוקיו – ברים, מועדונים, קריוקי. ליד קולנוע Toho עם פסל הגודזילה בגג.</p>
       <a href="https://maps.app.goo.gl/gNwU616RLuyeWwDQ7" target="_blank">📍 מפה</a>
     </div>
+    <div class="section-title">🍝 מסעדות מערביות – Omotesando & Shinjuku</div>
+    <div class="restaurant-box">
+      <h4>שתי שכונות מלאות באפשרויות</h4>
+      <div class="rest-item">🥞 <strong>Bills Omotesando</strong> – אותו קפה אוסטרלי אייקוני, בסניף שיק. <a href="https://www.google.com/maps/search/Bills+Omotesando+Tokyo" target="_blank">📍 מפה</a></div>
+      <div class="rest-item">🥩 <strong>Wolfgang's Steakhouse Shinjuku</strong> – סטייק ניו-יורקי פרמיום. <a href="https://www.google.com/maps/search/Wolfgang+Steakhouse+Shinjuku" target="_blank">📍 מפה</a></div>
+      <div class="rest-item">🔍 <a href="https://www.google.com/maps/search/italian+restaurant+Shinjuku+Tokyo" target="_blank">מסעדות איטלקיות בשינגוקו</a></div>
+    </div>
   </div>
 </div>
 
@@ -240,6 +299,15 @@ nav a:hover { background: rgba(255,255,255,0.3); }
     <span class="toggle-icon" id="i4">▼</span>
   </div>
   <div class="day-body" id="b4">
+  <div class="route-bar">
+    <a class="route-btn" href="https://www.google.com/maps/dir/teamLab+Planets+TOKYO/Odaiba+Seaside+Park/Gundam+Base+Tokyo/Ginza+Mitsukoshi+Department+Store" target="_blank">🗺️ מסלול יומי ב-Google Maps</a>
+  </div>
+  <div class="distances">
+    <h4>⏱️ מרחקים ביום זה</h4>
+    <div class="dist-row"><span>🚆 TeamLab → אודאיבה</span><span class="dist-time">10 דק' Yurikamome monorail</span></div>
+    <div class="dist-row"><span>🚶 פסל החירות → פסל גונדם</span><span class="dist-time">8 דק' | 600מ'</span></div>
+    <div class="dist-row"><span>🚆 אודאיבה → גינזה</span><span class="dist-time">20 דק' Yurikamome + רכבת</span></div>
+  </div>
     <div class="hotel-box">🏨 Tokyu Hotel Excel Shibuya</div>
     <div class="tip-box">⚠️ <strong>חשוב:</strong> להזמין כרטיסים ל-TeamLab מראש!</div>
     <div class="section-title">🎨 TeamLab – מוזיאון דיגיטלי</div>
@@ -274,6 +342,12 @@ nav a:hover { background: rgba(255,255,255,0.3); }
       <h4>🚗 Nissan Crossing + Sony Park + Uniqlo (11 קומות)</h4>
       <p>אולם תצוגה עתידני של ניסאן | Sony Park – פארק עירוני תת-קרקעי | חנות דגל של יוניקלו.</p>
     </div>
+    <div class="section-title">🍝 מסעדות מערביות בגינזה</div>
+    <div class="restaurant-box">
+      <h4>גינזה = הרובע היוקרתי, יש כאן הכל</h4>
+      <div class="rest-item">🇫🇷 <strong>Joel Robuchon</strong> – מסעדה צרפתית מישלן ברמת הכוכבים, בטוקיו. חוויה יוקרתית. <a href="https://www.google.com/maps/search/Joel+Robuchon+Tokyo" target="_blank">📍 מפה</a></div>
+      <div class="rest-item">🔍 <a href="https://www.google.com/maps/search/italian+restaurant+Ginza+Tokyo" target="_blank">מסעדות איטלקיות בגינזה</a></div>
+    </div>
     <div class="tip-box">💡 Gin = זהב, Za = מקום – בתקופת אדו פעלה כאן מטבעת הכסף.</div>
   </div>
 </div>
@@ -290,6 +364,17 @@ nav a:hover { background: rgba(255,255,255,0.3); }
     <span class="toggle-icon" id="i5">▼</span>
   </div>
   <div class="day-body" id="b5">
+  <div class="route-bar">
+    <a class="route-btn" href="https://www.google.com/maps/dir/Hakone-Yumoto+Station/Moto-Hakone+Port/Owakudani+Ropeway/Hakone+Open+Air+Museum/Hyatt+Regency+Hakone" target="_blank">🗺️ מסלול יומי ב-Google Maps</a>
+  </div>
+  <div class="distances">
+    <h4>⏱️ מרחקים ביום זה</h4>
+    <div class="dist-row"><span>🚆 שינגוקו → Hakone Yumoto</span><span class="dist-time">~90 דק' רכבת Odakyu</span></div>
+    <div class="dist-row"><span>🚌 Yumoto → Moto-Hakone Port</span><span class="dist-time">30 דק' אוטובוס</span></div>
+    <div class="dist-row"><span>⛵ שייט באגם Ashi</span><span class="dist-time">~30 דק' שייט</span></div>
+    <div class="dist-row"><span>🚡 Togendai → Owakudani (רכבל)</span><span class="dist-time">15 דק' רכבל</span></div>
+    <div class="dist-row"><span>🚌 Owakudani → מוזיאון פתוח</span><span class="dist-time">20 דק' אוטובוס</span></div>
+  </div>
     <div class="hotel-box">🏨 Hyatt Regency Hakone</div>
     <div class="tip-box">⚠️ <strong>להתחיל מוקדם!</strong> | לאחר צ'ק-אאוט – שלחו מזוודות גדולות ישירות לקיוטו (מהמלון או מחנות 7/11). טיילו עם תיק גב בלבד!</div>
     <div class="section-title">🚆 הגעה להאקונה</div>
@@ -329,6 +414,17 @@ nav a:hover { background: rgba(255,255,255,0.3); }
     <span class="toggle-icon" id="i6">▼</span>
   </div>
   <div class="day-body" id="b6">
+  <div class="route-bar">
+    <a class="route-btn" href="https://www.google.com/maps/dir/Kyoto+Station/Nishiki+Market+Kyoto/Ninenzaka+Kyoto/Yasaka+Pagoda+Kyoto/Maruyama+Park+Kyoto/Gion+District+Kyoto" target="_blank">🗺️ מסלול יומי ב-Google Maps</a>
+  </div>
+  <div class="distances">
+    <h4>⏱️ מרחקים ביום זה</h4>
+    <div class="dist-row"><span>🚶/🚌 תחנת קיוטו → שוק נישיקי</span><span class="dist-time">15 דק' אוטובוס / 25 דק' הליכה</span></div>
+    <div class="dist-row"><span>🚶 נישיקי → Ninenzaka</span><span class="dist-time">10 דק' | 800מ'</span></div>
+    <div class="dist-row"><span>🚶 Ninenzaka → Yasaka Pagoda</span><span class="dist-time">5 דק' | 400מ'</span></div>
+    <div class="dist-row"><span>🚶 Yasaka → פארק Maruyama</span><span class="dist-time">3 דק' | 200מ'</span></div>
+    <div class="dist-row"><span>🚶 Maruyama → גיון</span><span class="dist-time">5 דק' | 400מ'</span></div>
+  </div>
     <div class="hotel-box">🏨 Good Nature Hotel – במרכז העיר</div>
     <div class="transport-box">
       <h4>מהאקונה לקיוטו</h4>
@@ -364,6 +460,13 @@ nav a:hover { background: rgba(255,255,255,0.3); }
       <a href="https://share.google/QfrMQtZWBE4PGNfJA" target="_blank">📍 Ninenzaka</a>
       <a href="https://share.google/ig1SCmZFpOtntAnyc" target="_blank">📍 Sanenzaka</a>
     </div>
+    <div class="section-title">🍝 מסעדות מערביות בקיוטו</div>
+    <div class="restaurant-box">
+      <h4>ממליצה בחום</h4>
+      <div class="rest-item">🍕 <strong>napule Gion</strong> – כבר ברשימה! איטלקית בגיון, אווירה מצוינת. <a href="https://www.google.com/maps/search/napule+Kyoto" target="_blank">📍 מפה</a></div>
+      <div class="rest-item">☕ <strong>Starbucks Ninenzaka</strong> – קפה במבנה יפני עתיק על מחצלות טאטאמי, חוויה ייחודית!</div>
+      <div class="rest-item">🔍 <a href="https://www.google.com/maps/search/italian+restaurant+Gion+Kyoto" target="_blank">מסעדות איטלקיות נוספות בגיון</a></div>
+    </div>
     <div class="tip-box">🍝 המלצת ארוחת ערב: מסעדת <strong>napule</strong> איטלקית בגיון (ציינתם שאתם אוהבים מסעדות איטלקיות!)</div>
   </div>
 </div>
@@ -380,6 +483,16 @@ nav a:hover { background: rgba(255,255,255,0.3); }
     <span class="toggle-icon" id="i7">▼</span>
   </div>
   <div class="day-body" id="b7">
+  <div class="route-bar">
+    <a class="route-btn" href="https://www.google.com/maps/dir/Kinkaku-ji+Kyoto/Arashiyama+Kimono+Forest/Arashiyama+Bamboo+Grove/Togetsukyo+Bridge+Kyoto" target="_blank">🗺️ מסלול יומי ב-Google Maps</a>
+  </div>
+  <div class="distances">
+    <h4>⏱️ מרחקים ביום זה</h4>
+    <div class="dist-row"><span>🚌 מלון → Kinkakuji</span><span class="dist-time">20 דק' אוטובוס (קו 205/101)</span></div>
+    <div class="dist-row"><span>🚌 Kinkakuji → Arashiyama</span><span class="dist-time">30 דק' אוטובוס קו 59 | ¥230</span></div>
+    <div class="dist-row"><span>🚶 Kimono Forest → יער הבמבוק</span><span class="dist-time">3 דק' | 200מ'</span></div>
+    <div class="dist-row"><span>🚶 יער הבמבוק → גשר Togetsu</span><span class="dist-time">20 דק' | 1.5 ק"מ</span></div>
+  </div>
     <div class="hotel-box">🏨 Good Nature Hotel</div>
     <div class="section-title">🗺️ תוכנית היום</div>
     <div class="activity">
@@ -419,6 +532,17 @@ nav a:hover { background: rgba(255,255,255,0.3); }
     <span class="toggle-icon" id="i8">▼</span>
   </div>
   <div class="day-body" id="b8">
+  <div class="route-bar">
+    <a class="route-btn" href="https://www.google.com/maps/dir/Fushimi+Inari+Taisha/Nara+Park/Todai-ji+Temple+Nara/Dotonbori+Osaka/Shinsaibashi+Osaka" target="_blank">🗺️ מסלול יומי ב-Google Maps</a>
+  </div>
+  <div class="distances">
+    <h4>⏱️ מרחקים ביום זה</h4>
+    <div class="dist-row"><span>🚆 מלון קיוטו → Fushimi Inari</span><span class="dist-time">15 דק' רכבת</span></div>
+    <div class="dist-row"><span>🚆 JR Inari → נארה</span><span class="dist-time">45 דק' רכבת</span></div>
+    <div class="dist-row"><span>🚶 תחנת נארה → פארק נארה</span><span class="dist-time">20 דק' הליכה | 1.5 ק"מ</span></div>
+    <div class="dist-row"><span>🚶 פארק → מקדש Todaiji</span><span class="dist-time">15 דק' | 1 ק"מ</span></div>
+    <div class="dist-row"><span>🚆 נארה → אוסקה (Kintetsu)</span><span class="dist-time">35 דק' | ¥680</span></div>
+  </div>
     <div class="hotel-box">🏨 Swiss Hotel Namba – ממש מעל תחנת Kintetsu</div>
     <div class="tip-box">📦 שלחו מזוודות מהמלון בקיוטו לאוסקה לפני 10:00 – יגיעו באותו היום!</div>
     <div class="section-title">🗺️ תוכנית היום</div>
@@ -458,6 +582,12 @@ nav a:hover { background: rgba(255,255,255,0.3); }
       <p>הסמל האייקוני של אוסקה – ג'וגר מאיר מעל התעלה.</p>
       <a href="https://share.google/YhZg12l0qsTXNu9qI" target="_blank">📍 מפה</a>
     </div>
+    <div class="section-title">🍝 מסעדות מערביות בנמבה</div>
+    <div class="restaurant-box">
+      <h4>אוסקה = עיר האוכל של יפן – אבל יש גם מערבי</h4>
+      <div class="rest-item">🍕 <strong>napule Osaka</strong> – אותה רשת איטלקית ייחודית, גם באוסקה. <a href="https://www.google.com/maps/search/napule+Osaka" target="_blank">📍 מפה</a></div>
+      <div class="rest-item">🔍 <a href="https://www.google.com/maps/search/western+restaurant+Namba+Osaka" target="_blank">מסעדות מערביות ליד נמבה</a></div>
+    </div>
     <div class="tip-box">💡 רחוב Suemoncho (מאונך לגשר) – 400 מטרים עם 400+ מסעדות! רחוב Midosuji – "השדרה החמישית" של אוסקה, עצים מוארים בערב.</div>
   </div>
 </div>
@@ -474,6 +604,16 @@ nav a:hover { background: rgba(255,255,255,0.3); }
     <span class="toggle-icon" id="i9">▼</span>
   </div>
   <div class="day-body" id="b9">
+  <div class="route-bar">
+    <a class="route-btn" href="https://www.google.com/maps/dir/Osaka+Museum+of+History/Osaka+Castle+Park/Kuromon+Ichiba+Market+Osaka/Den+Den+Town+Osaka/Shinsekai+Osaka/Tsutenkaku+Tower" target="_blank">🗺️ מסלול יומי ב-Google Maps</a>
+  </div>
+  <div class="distances">
+    <h4>⏱️ מרחקים ביום זה</h4>
+    <div class="dist-row"><span>🚶 מוזיאון היסטוריה → טירת אוסקה</span><span class="dist-time">9 דק' | 700מ'</span></div>
+    <div class="dist-row"><span>🚆 טירה → שוק Kuromon</span><span class="dist-time">10 דק' מטרו (Morinomiya → Nippombashi)</span></div>
+    <div class="dist-row"><span>🚶 Kuromon → Den Den Town</span><span class="dist-time">10 דק' | 800מ'</span></div>
+    <div class="dist-row"><span>🚶 Den Den Town → Shin Sekai</span><span class="dist-time">13 דק' | 1 ק"מ</span></div>
+  </div>
     <div class="hotel-box">🏨 Swiss Hotel Namba</div>
     <div class="tip-box">🎫 <strong>Osaka Amazing Pass</strong> – ¥3,500 ליום / ¥5,000 ליומיים. כולל כניסה לאטרקציות + Metro ללא הגבלה. בדקו אם משתלם לכם!</div>
     <div class="section-title">🗺️ תוכנית היום</div>
@@ -522,6 +662,16 @@ nav a:hover { background: rgba(255,255,255,0.3); }
     <span class="toggle-icon" id="i10">▼</span>
   </div>
   <div class="day-body" id="b10">
+  <div class="route-bar">
+    <a class="route-btn" href="https://www.google.com/maps/dir/Osaka+Aquarium+Kaiyukan/Grand+Front+Osaka/Hankyu+Department+Store+Umeda/Umeda+Sky+Building" target="_blank">🗺️ מסלול יומי ב-Google Maps</a>
+  </div>
+  <div class="distances">
+    <h4>⏱️ מרחקים ביום זה</h4>
+    <div class="dist-row"><span>🚆 מלון → אקווריום Kaiyukan</span><span class="dist-time">20 דק' מטרו</span></div>
+    <div class="dist-row"><span>🚆 אקווריום → Umeda</span><span class="dist-time">20 דק' מטרו</span></div>
+    <div class="dist-row"><span>🚶 Grand Front → Hankyu</span><span class="dist-time">5 דק' | 400מ' (מחוברים!)</span></div>
+    <div class="dist-row"><span>🚶 Hankyu → Umeda Sky Building</span><span class="dist-time">10 דק' | 800מ'</span></div>
+  </div>
     <div class="hotel-box">🏨 Swiss Hotel Namba</div>
     <div class="section-title">🗺️ תוכנית היום</div>
     <div class="activity">
@@ -546,6 +696,12 @@ nav a:hover { background: rgba(255,255,255,0.3); }
       <h4>🌅 מגדל Umeda Sky Building – תצפית פנורמית</h4>
       <p>גג צף המחבר שני מגדלים – מראה מרשים מאוד על אוסקה.</p>
       <a href="https://share.google/XBSR5gvma1R0saMNp" target="_blank">📍 מפה</a>
+    </div>
+    <div class="section-title">🍝 מסעדות מערביות באומדה</div>
+    <div class="restaurant-box">
+      <h4>אומדה = הצד האלגנטי של אוסקה</h4>
+      <div class="rest-item">🏬 <strong>Hankyu B2</strong> – מרתף המזון של כלבו הנקיו, אחד המרשימים ביפן. מאפיות אירופאיות, פטיסרי צרפתי ועוד</div>
+      <div class="rest-item">🔍 <a href="https://www.google.com/maps/search/italian+restaurant+Umeda+Osaka" target="_blank">מסעדות איטלקיות באומדה</a></div>
     </div>
   </div>
 </div>
