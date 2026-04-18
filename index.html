@@ -59,6 +59,9 @@ nav a:hover { background: rgba(255,255,255,0.3); }
 .w-desc { font-weight:600; color:#1565c0; }
 .w-temp { background:#fff; border-radius:10px; padding:2px 8px; color:#333; }
 .w-rain { color:#1976d2; }
+.story-link { color:#2e7d32 !important; font-size:0.8rem; display:block; margin-top:6px; text-decoration:none; }
+.story-link:hover { text-decoration:underline; }
+.story-link::before { content:'📖 '; }
 </style>
 </head>
 <body>
@@ -902,6 +905,71 @@ async function loadWeather(){
   }
 }
 loadWeather();
+
+// === סיפורים מעניינים ליד כל אטרקציה ===
+const stories = [
+  // יום 1 – שיבויה
+  {m:'Scramble Crossing', t:'מדוע 2,500 איש חוצים בו-זמנית ולא מתנגשים?', u:'https://en.wikipedia.org/wiki/Shibuya_scramble'},
+  {m:"האצ'יקו",           t:'הכלב שחיכה לאדונו המת בתחנה כל יום 9 שנים', u:'https://en.wikipedia.org/wiki/Hachiko'},
+  {m:'Yokocho – סמטת',   t:'Yokocho – סמטאות הבר: מסורת שמגיעה מתקופת אדו', u:'https://en.wikipedia.org/wiki/Yokoch%C5%8D'},
+  {m:'Shibuya Stream',   t:'הנחל שנקבר 50 שנה ועלה לחיים מחדש ב-2018', u:'https://en.wikipedia.org/wiki/Shibuya_Stream'},
+  // יום 2 – אסקוסה / אואנו / אקיהבארה
+  {m:'Tokyo Skytree',    t:'עמיד לרעידות אדמה בהשראת פגודה בת 1,000 שנה', u:'https://en.wikipedia.org/wiki/Tokyo_Skytree'},
+  {m:'Senso-ji',         t:'מ-645 לספירה: נגלה לדייגים כשמשכו גחלת מהנהר', u:'https://en.wikipedia.org/wiki/Sens%C5%8D-ji'},
+  {m:'פארק Ueno',        t:'בסיס העמידה האחרון של שוגונות טוקוגאווה (1868)', u:'https://en.wikipedia.org/wiki/Ueno_Park'},
+  {m:'שוק Ameyoko',      t:'"Ame" = אמריקה? ממתקים? יש ויכוח היסטורי', u:'https://en.wikipedia.org/wiki/Ameyoko'},
+  {m:'Akihabara',        t:'איך שוק חשמל ויתיקה הפך לבירת האנימה העולמית', u:'https://en.wikipedia.org/wiki/Akihabara'},
+  // יום 3 – ארמון / אומוטסנדו / שינגוקו
+  {m:'ארמון הקיסר',      t:'הקיסר: אל, ייצוגי, וגם האזרח היחיד ביפן ללא זכות הצבעה', u:'https://en.wikipedia.org/wiki/Tokyo_Imperial_Palace'},
+  {m:'Omotesando',       t:'בנויה כדרך מסורתית למקדש – הפכה לשאנזליזה', u:'https://en.wikipedia.org/wiki/Omotesand%C5%8D'},
+  {m:'פארק Yoyogi',      t:'שדה תעופה, מחנה צבאי אמריקאי, אולימפיאדה – ואז פארק', u:'https://en.wikipedia.org/wiki/Yoyogi_Park'},
+  {m:'Takeshita Street', t:'תרבות Kawaii שכבשה את העולם – נולדה בדיוק כאן', u:'https://en.wikipedia.org/wiki/Takeshita_Street'},
+  {m:'Omoide Yokocho',   t:'ניצלה מהפצצות 1945 – ולא השתנתה מאז', u:'https://en.wikipedia.org/wiki/Omoide_Yokoch%C5%8D'},
+  {m:'Kabukicho',        t:'נקרא כך כי תוכנן כאן תיאטרון קבוקי שמעולם לא נבנה', u:'https://en.wikipedia.org/wiki/Kabukicho'},
+  // יום 4 – TeamLab / אודאיבה / גינזה
+  {m:'Borderless',       t:'למה נסגר, עבר מקום ונולד מחדש – מאחורי ה-reset', u:'https://en.wikipedia.org/wiki/TeamLab_Borderless'},
+  {m:'Planets',          t:'TeamLab: אמנות דיגיטלית כחוויה פיזית – הרעיון מאחוריה', u:'https://en.wikipedia.org/wiki/TeamLab'},
+  {m:'פסל החירות + גשר', t:'האי נבנה ב-1853 כביצורים נגד "השדים השחורים" של קומודור פרי', u:'https://en.wikipedia.org/wiki/Odaiba'},
+  {m:'פסל הגונדם',       t:'גונדם – ה-Star Wars של יפן, נולד ב-1979', u:'https://en.wikipedia.org/wiki/Gundam'},
+  {m:'Mitsukoshi',       t:'בית הכלבו הראשון ביפן – פתח דלתות ב-1673!', u:'https://en.wikipedia.org/wiki/Mitsukoshi'},
+  {m:'Nissan Crossing',  t:'גינזה = מטבעת הכסף: כאן טבעו מטבעות מ-1612', u:'https://en.wikipedia.org/wiki/Ginza'},
+  // יום 5 – האקונה
+  {m:'שייט באגם Ashi',   t:'אגם לוע שנוצר בהתפרצות לפני 3,000 שנה', u:'https://en.wikipedia.org/wiki/Lake_Ashi'},
+  {m:'Owakudani',        t:'הביצים השחורות: מאיפה הגיע מיתוס 7 שנות חיים?', u:'https://en.wikipedia.org/wiki/Owakudani'},
+  {m:'Hakone Open Air',  t:'המוזיאון הפתוח הראשון ביפן – נפתח 1969', u:'https://en.wikipedia.org/wiki/Hakone_Open-Air_Museum'},
+  // יום 6 – קיוטו
+  {m:'שוק נישיקי',       t:'400 שנה: למה מים תת-קרקעיים קרים הכריעו את מיקום השוק', u:'https://en.wikipedia.org/wiki/Nishiki_Market'},
+  {m:'הסמוראים',         t:'קוד הבושידו: מה מותר ומה אסור לסמוראי', u:'https://en.wikipedia.org/wiki/Samurai'},
+  {m:'מאיקו',            t:'ההבדל בין גיישה למאיקו – מה שרוב התיירים לא יודעים', u:'https://en.wikipedia.org/wiki/Maiko'},
+  {m:'Ninenzaka',        t:'המדרגות שאסור לכשול בהן – האגדה הקיוטואית', u:'https://en.wikipedia.org/wiki/Ninenzaka'},
+  // יום 7 – מקדש הזהב / אראשיאמה
+  {m:'Kinkakuji',        t:'ב-1950 שרף נזיר צעיר את המקדש – מישימה כתב רומן על זה', u:'https://en.wikipedia.org/wiki/Kinkaku-ji'},
+  {m:'יער הבמבוקים',     t:'הצלילים כאן הוכרזו רשמית כ"100 הצלילים היפים ביפן"', u:'https://en.wikipedia.org/wiki/Arashiyama'},
+  {m:'גשר Togetsu',      t:'שמו = "ירח חוצה את הגשר" – 1,000 שנה של שירה עליו', u:'https://en.wikipedia.org/wiki/Togetsukyo'},
+  {m:'יער הקימונו',      t:'הקימונו: בגד שנלבש 1,300 שנה ועדיין לא יצא מאופנה', u:'https://en.wikipedia.org/wiki/Kimono'},
+  // יום 8 – פושימי / נארה / אוסקה
+  {m:'Fushimi Inari',    t:'10,000 שערים – כל שער נתרם ע"י עסק לברכת פרנסה', u:'https://en.wikipedia.org/wiki/Fushimi_Inari-taisha'},
+  {m:'עיר האיילים',      t:'האיילים הם "אוצר לאומי" ויודעים להשתחוות לקבל אוכל', u:'https://en.wikipedia.org/wiki/Nara_city'},
+  {m:'מקדש Todaiji',     t:'500 טון נחושת, נבנה ב-752 – הפסל הגדול של בודהה בעולם', u:'https://en.wikipedia.org/wiki/T%C5%8Ddai-ji'},
+  {m:'Dotonbori + Shinsaibashi', t:'האיש הרץ של גוליקו – הסיפור מאחורי השלט האייקוני', u:'https://en.wikipedia.org/wiki/D%C5%8Dtonbori'},
+  // יום 9 – אוסקה
+  {m:'מוזיאון ההיסטוריה של אוסקה', t:'מה קרה לאוסקה שהייתה בירה לפני טוקיו?', u:'https://en.wikipedia.org/wiki/Osaka_Museum_of_History'},
+  {m:'טירת אוסקה',       t:'נבנה, נשרף, נבנה – 3 גלגולים בתוך 400 שנה', u:'https://en.wikipedia.org/wiki/Osaka_Castle'},
+  {m:'שוק Kuromon',      t:'"המטבח של אוסקה" – 200 שנה ולא עצר יום', u:'https://en.wikipedia.org/wiki/Kuromon_Ichiba_Market'},
+  {m:'Shin Sekai',        t:'תוכנן ב-1912 כ"פריז של המזרח" – מה השתבש?', u:'https://en.wikipedia.org/wiki/Shinsekai,_Osaka'},
+  // יום 10 – אקווריום / אומדה
+  {m:'אקווריום Kaiyukan', t:'אחד מ-3 הגדולים בעולם – ולמה הוא בצורת ספירלה?', u:'https://en.wikipedia.org/wiki/Osaka_Aquarium_Kaiyukan'},
+  {m:'Umeda Sky Building', t:'נדחה 17 פעמים על ידי העירייה – האדריכל שלא ויתר', u:'https://en.wikipedia.org/wiki/Umeda_Sky_Building'},
+];
+
+stories.forEach(({m,t,u})=>{
+  document.querySelectorAll('.activity h4').forEach(h4=>{
+    if(h4.textContent.includes(m) && !h4.parentElement.querySelector('.story-link')){
+      h4.parentElement.insertAdjacentHTML('beforeend',
+        `<a href="${u}" target="_blank" rel="noopener" class="story-link">${t}</a>`);
+    }
+  });
+});
 // גלול ליום הנכון לפי עוגן
 window.addEventListener('load', () => {
   if(location.hash) {
