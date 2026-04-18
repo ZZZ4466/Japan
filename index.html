@@ -7,16 +7,16 @@
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: 'Segoe UI', Arial, sans-serif; background: #f5f5f5; color: #222; direction: rtl; }
-header { background: #c62828; color: white; text-align: center; padding: 24px 16px; }
+header { background: #1565c0; color: white; text-align: center; padding: 24px 16px; }
 header h1 { font-size: 2rem; }
 header p { opacity: 0.85; margin-top: 6px; }
-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; background: #b71c1c; padding: 10px; }
+nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; background: #0d47a1; padding: 10px; }
 nav a { color: white; text-decoration: none; padding: 6px 14px; border-radius: 20px; background: rgba(255,255,255,0.15); font-size: 0.85rem; }
 nav a:hover { background: rgba(255,255,255,0.3); }
 .container { max-width: 900px; margin: 24px auto; padding: 0 16px; }
 .day-card { background: white; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); overflow: hidden; }
 .day-header { display: flex; align-items: center; gap: 14px; padding: 16px 20px; cursor: pointer; }
-.day-num { background: #c62828; color: white; border-radius: 50%; width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.1rem; flex-shrink: 0; }
+.day-num { background: #1565c0; color: white; border-radius: 50%; width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.1rem; flex-shrink: 0; }
 .day-title { flex: 1; }
 .day-title h2 { font-size: 1.15rem; color: #1a1a1a; }
 .day-title .meta { font-size: 0.82rem; color: #777; margin-top: 2px; }
@@ -32,7 +32,7 @@ nav a:hover { background: rgba(255,255,255,0.3); }
 .activity { border-right: 3px solid #e0e0e0; padding: 8px 12px; margin-bottom: 10px; }
 .activity h4 { font-size: 0.95rem; color: #222; }
 .activity p { font-size: 0.85rem; color: #555; margin-top: 4px; line-height: 1.5; }
-.activity a { color: #c62828; text-decoration: none; font-size: 0.82rem; display: inline-block; margin-top: 4px; }
+.activity a { color: #1565c0; text-decoration: none; font-size: 0.82rem; display: inline-block; margin-top: 4px; }
 .activity a:hover { text-decoration: underline; }
 .tip-box { background: #fff8e1; border-right: 4px solid #f9a825; border-radius: 6px; padding: 10px 14px; margin: 10px 0; font-size: 0.85rem; color: #555; line-height: 1.5; }
 .transport-box { background: #e3f2fd; border-radius: 8px; padding: 12px 16px; margin: 10px 0; }
@@ -50,9 +50,15 @@ nav a:hover { background: rgba(255,255,255,0.3); }
 .dist-row:last-child { border-bottom: none; }
 .dist-time { color: #1565c0; font-weight: 600; }
 .restaurant-box { background: #fce4ec; border-radius: 8px; padding: 12px 16px; margin: 8px 0; }
-.restaurant-box h4 { color: #c62828; font-size: 0.88rem; margin-bottom: 8px; }
+.restaurant-box h4 { color: #1565c0; font-size: 0.88rem; margin-bottom: 8px; }
 .rest-item { font-size: 0.83rem; color: #333; padding: 3px 0; }
-.rest-item a { color: #c62828; }
+.rest-item a { color: #1565c0; }
+.weather-widget { display:flex; align-items:center; flex-wrap:wrap; gap:10px; background:#e3f2fd; border-radius:8px; padding:8px 14px; margin:8px 20px 0; font-size:0.85rem; }
+.weather-widget.loading { color:#888; font-style:italic; }
+.w-emoji { font-size:1.4rem; }
+.w-desc { font-weight:600; color:#1565c0; }
+.w-temp { background:#fff; border-radius:10px; padding:2px 8px; color:#333; }
+.w-rain { color:#1976d2; }
 </style>
 </head>
 <body>
@@ -84,7 +90,7 @@ nav a:hover { background: rgba(255,255,255,0.3); }
     <div class="day-num">1</div>
     <div class="day-title">
       <h2>נחיתה בנאריטה ← שיבויה</h2>
-      <div class="meta">23 אפריל | יום רביעי</div>
+      <div class="meta">23 אפריל | יום חמישי</div>
     </div>
     <span class="city-badge tokyo">טוקיו</span>
     <span class="toggle-icon" id="i1">▼</span>
@@ -153,7 +159,7 @@ nav a:hover { background: rgba(255,255,255,0.3); }
     <div class="day-num">2</div>
     <div class="day-title">
       <h2>אסקוסה · אואנו · אקיהבארה</h2>
-      <div class="meta">24 אפריל | יום חמישי</div>
+      <div class="meta">24 אפריל | יום שישי</div>
     </div>
     <span class="city-badge tokyo">טוקיו</span>
     <span class="toggle-icon" id="i2">▼</span>
@@ -227,7 +233,7 @@ nav a:hover { background: rgba(255,255,255,0.3); }
     <div class="day-num">3</div>
     <div class="day-title">
       <h2>ארמון הקיסר · אומוטסנדו · הארגוקו · שינגוקו</h2>
-      <div class="meta">25 אפריל | יום שישי</div>
+      <div class="meta">25 אפריל | יום שבת</div>
     </div>
     <span class="city-badge tokyo">טוקיו</span>
     <span class="toggle-icon" id="i3">▼</span>
@@ -304,7 +310,7 @@ nav a:hover { background: rgba(255,255,255,0.3); }
     <div class="day-num">4</div>
     <div class="day-title">
       <h2>TeamLab · אודאיבה · גינזה</h2>
-      <div class="meta">26 אפריל | יום שבת</div>
+      <div class="meta">26 אפריל | יום ראשון</div>
     </div>
     <span class="city-badge tokyo">טוקיו</span>
     <span class="toggle-icon" id="i4">▼</span>
@@ -375,7 +381,7 @@ nav a:hover { background: rgba(255,255,255,0.3); }
     <div class="day-num">5</div>
     <div class="day-title">
       <h2>האקונה – Owakudani · אגם Ashi · מוזיאון פתוח</h2>
-      <div class="meta">27 אפריל | יום ראשון</div>
+      <div class="meta">27 אפריל | יום שני</div>
     </div>
     <span class="city-badge hakone">האקונה</span>
     <span class="toggle-icon" id="i5">▼</span>
@@ -432,7 +438,7 @@ nav a:hover { background: rgba(255,255,255,0.3); }
     <div class="day-num">6</div>
     <div class="day-title">
       <h2>קיוטו – שוק נישיקי · גיון · העיר העתיקה</h2>
-      <div class="meta">28 אפריל | יום שני</div>
+      <div class="meta">28 אפריל | יום שלישי</div>
     </div>
     <span class="city-badge kyoto">קיוטו</span>
     <span class="toggle-icon" id="i6">▼</span>
@@ -504,7 +510,7 @@ nav a:hover { background: rgba(255,255,255,0.3); }
     <div class="day-num">7</div>
     <div class="day-title">
       <h2>קיוטו – מקדש הזהב · אראשיאמה · יער הבמבוקים</h2>
-      <div class="meta">29 אפריל | יום שלישי</div>
+      <div class="meta">29 אפריל | יום רביעי</div>
     </div>
     <span class="city-badge kyoto">קיוטו</span>
     <span class="toggle-icon" id="i7">▼</span>
@@ -560,7 +566,7 @@ nav a:hover { background: rgba(255,255,255,0.3); }
     <div class="day-num">8</div>
     <div class="day-title">
       <h2>פושימי אינארי · נארה · אוסקה – דוטונבורי</h2>
-      <div class="meta">30 אפריל | יום רביעי</div>
+      <div class="meta">30 אפריל | יום חמישי</div>
     </div>
     <span class="city-badge osaka">אוסקה</span>
     <span class="toggle-icon" id="i8">▼</span>
@@ -635,7 +641,7 @@ nav a:hover { background: rgba(255,255,255,0.3); }
     <div class="day-num">9</div>
     <div class="day-title">
       <h2>טירת אוסקה · שוק קורומון · שין סקאי</h2>
-      <div class="meta">1 מאי | יום חמישי</div>
+      <div class="meta">1 מאי | יום שישי</div>
     </div>
     <span class="city-badge osaka">אוסקה</span>
     <span class="toggle-icon" id="i9">▼</span>
@@ -702,7 +708,7 @@ nav a:hover { background: rgba(255,255,255,0.3); }
     <div class="day-num">10</div>
     <div class="day-title">
       <h2>אקווריום אוסקה · איזור אומדה</h2>
-      <div class="meta">2 מאי | יום שישי</div>
+      <div class="meta">2 מאי | יום שבת</div>
     </div>
     <span class="city-badge osaka">אוסקה</span>
     <span class="toggle-icon" id="i10">▼</span>
@@ -761,7 +767,7 @@ nav a:hover { background: rgba(255,255,255,0.3); }
     <div class="day-num">11</div>
     <div class="day-title">
       <h2>טיסה חזרה מנאריטה</h2>
-      <div class="meta">3 מאי | יום שבת</div>
+      <div class="meta">3 מאי | יום ראשון</div>
     </div>
     <span class="city-badge flight">טיסה חזרה</span>
     <span class="toggle-icon" id="i11">▼</span>
@@ -791,7 +797,7 @@ nav a:hover { background: rgba(255,255,255,0.3); }
 </div>
 
 <!-- מידע כללי -->
-<div class="day-card" style="border-top: 4px solid #c62828;">
+<div class="day-card" style="border-top: 4px solid #1565c0;">
   <div class="day-header" onclick="toggle('binfo')">
     <div class="day-num" style="background:#555">ℹ️</div>
     <div class="day-title"><h2>מידע כללי + מספרי חירום</h2></div>
@@ -841,6 +847,61 @@ function toggle(id) {
 }
 // פתח יום 1 כברירת מחדל
 toggle('b1');
+
+// === מזג אוויר (Open-Meteo API) ===
+const wCode = c => {
+  if(c===0) return ['☀️','שמיים נקיים'];
+  if(c<=1)  return ['🌤️','בהיר בעיקר'];
+  if(c<=2)  return ['⛅','מעונן חלקית'];
+  if(c<=3)  return ['☁️','מעונן'];
+  if(c<=48) return ['🌫️','ערפל'];
+  if(c<=55) return ['🌦️','טפטוף'];
+  if(c<=65) return ['🌧️','גשם'];
+  if(c<=75) return ['🌨️','שלג'];
+  if(c<=82) return ['🌧️','מטר'];
+  return ['⛈️','סופת רעמים'];
+};
+
+const weatherData = [
+  {lat:35.68,lon:139.69,start:'2026-04-23',end:'2026-04-26',days:[1,2,3,4]},
+  {lat:35.23,lon:139.02,start:'2026-04-27',end:'2026-04-27',days:[5]},
+  {lat:35.01,lon:135.77,start:'2026-04-28',end:'2026-04-29',days:[6,7]},
+  {lat:34.69,lon:135.50,start:'2026-04-30',end:'2026-05-03',days:[8,9,10,11]}
+];
+
+// הזרק widget לכל יום
+for(let i=1;i<=11;i++){
+  const body=document.getElementById('b'+i);
+  if(!body) continue;
+  const w=document.createElement('div');
+  w.className='weather-widget loading';
+  w.id='weather-'+i;
+  w.textContent='⏳ טוען תחזית מזג אוויר...';
+  const rb=body.querySelector('.route-bar');
+  rb ? rb.after(w) : body.insertAdjacentElement('afterbegin',w);
+}
+
+async function loadWeather(){
+  for(const c of weatherData){
+    try{
+      const url=`https://api.open-meteo.com/v1/forecast?latitude=${c.lat}&longitude=${c.lon}&daily=temperature_2m_max,temperature_2m_min,precipitation_sum,weathercode&timezone=Asia%2FTokyo&start_date=${c.start}&end_date=${c.end}`;
+      const d=(await(await fetch(url)).json()).daily;
+      c.days.forEach((n,i)=>{
+        const el=document.getElementById('weather-'+n);
+        if(!el||d.temperature_2m_max[i]==null) return;
+        const max=Math.round(d.temperature_2m_max[i]);
+        const min=Math.round(d.temperature_2m_min[i]);
+        const rain=(d.precipitation_sum[i]||0).toFixed(1);
+        const [emoji,desc]=wCode(d.weathercode[i]);
+        el.innerHTML=`<span class="w-emoji">${emoji}</span><span class="w-desc">${desc}</span><span class="w-temp">🌡️ ${min}°–${max}°C</span>${parseFloat(rain)>0?`<span class="w-rain">🌂 ${rain}מ"מ</span>`:''}`;
+        el.classList.remove('loading');
+      });
+    }catch(e){
+      c.days.forEach(n=>{const el=document.getElementById('weather-'+n);if(el)el.innerHTML='⚠️ תחזית לא זמינה';});
+    }
+  }
+}
+loadWeather();
 // גלול ליום הנכון לפי עוגן
 window.addEventListener('load', () => {
   if(location.hash) {
