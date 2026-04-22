@@ -839,8 +839,6 @@ function toggle(id) {
   body.classList.toggle('open', !isOpen);
   icon.textContent = isOpen ? '▼' : '▲';
 }
-// פתח יום 1 כברירת מחדל
-toggle('b1');
 
 // === מזג אוויר (Open-Meteo API) ===
 const wCode = c => {
@@ -961,15 +959,11 @@ stories.forEach(({m,t,u})=>{
     }
   });
 });
-// גלול ליום הנכון לפי עוגן
+// גלול ליום הנכון לפי עוגן (בלי לפתוח אוטומטית)
 window.addEventListener('load', () => {
   if(location.hash) {
     const el = document.querySelector(location.hash);
-    if(el) {
-      const bodyId = 'b' + location.hash.replace('#day','');
-      toggle(bodyId);
-      setTimeout(() => el.scrollIntoView({behavior:'smooth'}), 100);
-    }
+    if(el) setTimeout(() => el.scrollIntoView({behavior:'smooth'}), 100);
   }
 });
 </script>
